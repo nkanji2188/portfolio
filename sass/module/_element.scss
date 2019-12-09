@@ -1,0 +1,111 @@
+// エレメント形式のクラスを記述
+
+// ブロック形式の中に入るクラス
+// .header__ttl{    
+// }
+// .gnav__item{   
+// }
+
+// まとめるのにブロック使用の例
+// .gnav{
+//     &__item{}
+//     &__list{}
+// }
+
+// 疑似クラス使用の例
+// .gnav{
+//     &__list{
+//             &:hover{
+//             }
+//         }
+// }
+p, h2, h3{
+    font-family: $font-noto;
+}
+a{
+    color: rgb(41, 41, 41);
+}
+
+.header{
+    &__box{
+    height: 100vh;
+    position: relative;
+    // display: flex;
+    // align-items: center;
+}
+    &__mv{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+ &__ttl{
+     font-size: 30px;
+     position: absolute;
+     top: 50%;
+     left: 0;
+     width: 100%;
+     text-align: center;
+     color: #fff;
+   text-shadow: 0 0 10px rgba(82, 218, 255, 0.673);
+   font-family: futura-pt-bold, sans-serif;
+   //  background: rgba(82, 218, 255, 0.673);
+}
+&__txt{
+    font-size: 16px;
+    position: absolute;
+    top: 56%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(82, 218, 255, 0.673);
+    font-family: futura-pt-bold, sans-serif;
+ }
+}
+
+.sec{
+    &__line, &__ttl-02, &__txt{
+        margin-bottom: 20px;
+    }
+    &__ttl{
+        font-size: 30px;
+        text-shadow: 0 0 10px #999;
+   font-family: futura-pt-bold, sans-serif;
+   color: #fff;
+   margin-bottom: 5px;
+
+    }
+    &__line{
+        height: 2px;
+        width: 80%;
+        box-shadow: 0 0 10px #999;
+        background: #fff;
+        margin-bottom: 50px;
+    }
+    &__pic{
+        width: 85%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        box-shadow: 10px 10px #999;
+       
+        // transform: scaleY(0.5);
+        // transform-origin: right center;
+        transform: translateZ( 70px) rotateZ( 3deg) rotateY( -15deg) perspective(500px);
+    }
+    &__ttl-02{
+        font-size: 20px;
+    }
+    &__txt{
+        font-size: 14px;
+        line-height: 2;
+    }
+    &__link{
+        display: block;
+        padding: 10px 0;
+        width: 200px;
+        border: 1px solid rgb(92, 92, 92);
+        text-decoration: none;
+        text-align: center;
+    }
+}

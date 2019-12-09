@@ -1,0 +1,23 @@
+// ブロック形式のクラスを記述
+
+// body{
+//     overflow: hidden;
+//     margin: 0;
+// }
+
+
+.main{
+    width: 100%;
+    background: rgba(0, 0, 0, 0.782);
+    height: 3000px;
+ 
+}
+.sec{
+    padding: 20px;
+    background: rgb(243, 243, 243);
+    margin-bottom: 50px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+
