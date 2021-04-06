@@ -2,42 +2,216 @@ doctype html
 html(lang="ja")
   head
     meta(charset="utf-8")
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
     title kanji nakahashi portfolio
     meta(name='robots' content='noindex, nofollow')
-    meta(name='keywords' content='')
+    meta(name='keywords' content='kanji, nakahashi, portfolio')
     meta(name='description' content='中橋寛治のportfolioです。')
-    link(rel="stylesheet" href="https://use.typekit.net/rmq1suw.css")
+    link(href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap" rel="stylesheet")
+    //- slickスライダーの読み込み
+    link(rel="stylesheet" href="css/slick.css")
+    //- slickスライダーのアローなどのCSS
+    link(rel="stylesheet" href="css/slick-theme.css")
     link(rel="stylesheet" href="css/style.css")
+    script(src="js/firstview.js")
 body
-  header.header
-    .header__box
-      canvas.header__mv#header__mv
-      h1.header__ttl kanji nakahashi
-      p.header__txt portfolio
-  main.main
-    section.sec
-      h2.sec__ttl 01. k.n website
-      .sec__line
-      img.sec__pic(src="images/kn-web.jpg" alt="k.n website")
-      .sec__box
-      h3.sec__ttl-02 kanji nakahashi
-      p.sec__txt 訓練校一か月目に作成した自己紹介サイトです。
-        br
-        br 
-        | 技術は低いですが、見ている人に楽しんでもらえることを目標に制作いたしました。 
-        br
-        br 
-        | 本サイト後半でも自己PRさせて頂きますが、合わせてご覧いただければと思います。/
-      //- .sec1__link
-      a.sec__link(href="#") click
-
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js")
-  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+  wrapper
+    header.header
+      .header__box
+        canvas.header__mv#header__mv
+        h1
+          img.header__ttl(src="images/kanji-nakahashi.png" alt="kanji nakahashi")
+          img.header__ttl-02(src="images/portfolio.png" alt="portfolio")
+    button.gnav__btn#gnav__btn
+      span.gnav__btn-top#gnav__btn-top
+      span.gnav__btn-mid#gnav__btn-mid
+      span.gnav__btn-btm#gnav__btn-btm
+    nav.gnav
+      ul.gnav__nav#gnav__nav
+        li.gnav__list: a.gnav__link(href="#sec1") 01. k.n website
+        li.gnav__list: a.gnav__link(href="#sec2") 02. design
+        li.gnav__list: a.gnav__link(href="#sec3") 03. group work
+        li.gnav__list: a.gnav__link(href="#sec4") 04. jQuery
+        li.gnav__list: a.gnav__link(href="#sec5") 05. corporate
+        li.gnav__list: a.gnav__link(href="#sec6") first view-01
+        li.gnav__list: a.gnav__link(href="#sec-pr") self appeal
+        li.gnav__list: a.gnav__link(href="#footer") contact
+    main.main      
+      
+      //- 新規仮追加
+      section.sec-new
+        h2.sec-new__ttl new
+        #sec-new__slick
+          div.sec-new__box
+            .sec-new__pic02 
+            h3.sec-new__ttl-02 bread baking class
+            p.sec-new__txt 技術習得のために制作したサイトです。トップページのみですが、動きやデザインを工夫しました。またjetskiとこのサイトはBootstrapを使用しています。
+              small.sec-new__small ※制作期間約4日間&nbsp;レスポンシブ対応
+              a.sec-new__link(href="https://kanji-n.work/bread/" target="_blank") click
+          div.sec-new__box
+            .sec-new__pic01 
+            h3.sec-new__ttl-02 jet ski
+            p.sec-new__txt 仕事で制作したジェットスキーの試作サイトです。トップページ、お問い合わせ、会社概要のみの制作ですが、スライダーを多く取り入れました。
+              small.sec-new__small ※制作期間約1週間&nbsp;レスポンシブ対応
+              a.sec-new__link(href="https://kanji-n.work/jetsky/" target="_blank") click
+          div.sec-new__box
+            .sec-new__pic03 
+            h3.sec-new__ttl-02 lloyd’s coffee
+            p.sec-new__txt 訓練校6ヶ月目に制作した、カフェのサイトです。実際に仕事を受けて作る場合を想定して制作しましたので、実在するカフェのサイトをリニューアルしています。
+              //- span.sec-new__space ファーストヴューの演出がカフェのサイトとしては少し派手になっていますが、技術的な訓練も兼てのものになります。
+              small.sec-new__small ※制作期間約1か月&nbsp;レスポンシブ対応
+              a.sec-new__link(href="https://lloydscoffee.kanji-n.work/" target="_blank") click
+          div.sec-new__box
+            .sec-new__pic02 
+            h3.sec-new__ttl-02 bread baking class
+            p.sec-new__txt 技術習得のために制作したサイトです。トップページのみですが、動きやデザインを工夫しました。またjetskiとこのサイトはBootstrapを使用しています。
+              small.sec-new__small ※制作期間約4日間&nbsp;レスポンシブ対応
+              a.sec-new__link(href="https://kanji-n.work/bread/" target="_blank") click
+          div.sec-new__box
+            .sec-new__pic01 
+            h3.sec-new__ttl-02 jet ski
+            p.sec-new__txt 仕事で制作したジェットスキーの試作サイトです。トップページ、お問い合わせ、会社概要のみの制作ですが、スライダーを多く取り入れました。
+              small.sec-new__small ※制作期間約1週間&nbsp;レスポンシブ対応
+              a.sec-new__link(href="https://kanji-n.work/jetsky/" target="_blank") click
+          div.sec-new__box
+            .sec-new__pic03 
+            h3.sec-new__ttl-02 lloyd’s coffee
+            p.sec-new__txt 訓練校6ヶ月目に制作した、カフェのサイトです。実際に仕事を受けて作る場合を想定して制作しましたので、実在するカフェのサイトをリニューアルしています。
+              //- span.sec-new__space ファーストヴューの演出がカフェのサイトとしては少し派手になっていますが、技術的な訓練も兼てのものになります。
+              small.sec-new__small ※制作期間約1か月&nbsp;レスポンシブ対応
+              a.sec-new__link(href="https://lloydscoffee.kanji-n.work/" target="_blank") click
+      
+      //- セクション1自己紹介サイト
+      section.sec1#sec1
+        h2: img.sec1__ttl(src="images/kn-website.png" alt="01.k.n website")
+        .sec1__pic#sec1__pic
+        h3.sec1__ttl-02 kanji nakahashi
+        p.sec1__txt 訓練校一か月目に制作した自己紹介サイトです。
+          span.sec1__space 技術は低いですが、見ている人に楽しんでもらえることを目標に制作いたしました。
+          span.sec1__space 本サイト後半でも自己PRさせて頂きますが、合わせてご覧いただければと思います。
+          small.sec1__small ※制作期間約4日&nbsp;レスポンシブ非対応&nbsp;1920×1080px
+          a.sec1__link(href="https://self-introduction.kanji-n.work/" target="_blank") click
+      
+      //- セクション２デザインカンプ
+      section.sec2#sec2
+        h2: img.sec2__ttl(src="images/design.png" alt="02.design")
+        .sec2__pic#sec2__pic
+        h3.sec2__ttl-02 next one
+        p.sec2__txt 訓練校二か月目にフォトショップで制作したデザインカンプです。訓練校の運営会社であるネクストワンのサイトデザインになります。
+          span.sec2__space 自宅にフォトショップはありますが、バージョンがとても古いものですので、慣れるのに苦労しました。
+          span.sec2__space 部分的にですが良く出来たところもありますので、ご覧いただければと思います。
+          small.sec1__small ※制作期間約5日
+          a.sec2__link(href="images/nextone.jpg" target="_blank") click
+      
+      //- セクション３WSSサイト
+      section.sec3#sec3
+        h2: img.sec3__ttl(src="images/group-work.png" alt="03.group work")
+        .sec3__pic#sec3__pic
+        h3.sec3__ttl-02 web study saporo
+        p.sec3__txt グループワークにて職業訓練校のウエブサイトを制作しました。
+          span.sec3__space この時はリーダーをさせて頂き、シュミレーションですがクライアントのヒアリングからコーディングまで行いました。
+          span.sec3__space このサイトではトップページのデザインとコーディングを担当いたしました。
+          span.sec3__space 職業訓練校3か月目の作品です。
+          small.sec1__small ※制作期間約3週間&nbsp;レスポンシブ非対応&nbsp;1920×1080px
+          a.sec3__link(href="https://wss.kanji-n.work/" target="_blank") click
+      
+      //- セクション4sapporoサイト
+      section.sec4#sec4
+        h2: img.sec4__ttl(src="images/jquery.png" alt="04.jQuery")
+        .sec4__pic#sec4__pic
+        h3.sec4__ttl-02 sapporo introductuon
+        p.sec4__txt js（主にjQuery）の授業の終わりに制作した、札幌を紹介するサイトです。
+          span.sec4__space jsの授業の制作物になりますので、動きが多くなっています。
+          span.sec4__space 動画をフェードインやレイアウトを工夫して組み合わせています。
+          span.sec4__space 訓練4か月目の作品です。
+          small.sec1__small ※制作期間約4日&nbsp;レスポンシブ非対応&nbsp;1920×1080px
+          a.sec4__link(href="https://sapporo.kanji-n.work/" target="_blank") click
+      //- セクション5はコーポレートサイト
+      section.sec5#sec5
+        h2: img.sec5__ttl(src="images/corporate-site.png" alt="05.corporate-site")
+        .sec5__pic#sec5__pic
+        h3.sec5__ttl-02 lloyd’s coffee
+        p.sec5__txt 訓練校6ヶ月目に制作した、カフェのサイトです。
+          span.sec5__space 実際に仕事を受けて作る場合を想定して制作しましたので、実在するカフェのサイトをリニューアルしています。
+          span.sec5__space ファーストヴューの演出がカフェのサイトとしては少し派手になっていますが、技術的な訓練も兼てのものになります。
+          small.sec1__small ※制作期間約一か月&nbsp;レスポンシブ対応&nbsp;最大サイズ1920×1080px
+          a.sec5__link(href="https://lloydscoffee.kanji-n.work/" target="_blank") click
+      //- ファーストビュー01
+      section.sec6#sec6
+        h2: img.sec6__ttl(src="images/first-view-01.png" alt="first view-01")
+        .sec6__pic#sec6__pic
+        h3.sec6__ttl-02 portfolio
+        p.sec6__txt 最初に制作した本ポートフォリオのファーストビューです。
+          span.sec6__space 少し古いiOSでは対応出来ませんでしたので、現在のファーストビューに変更しました。
+          span.sec6__space PCやAndroid、最近のiOSでは動作しますので、是非ご覧ください。
+          small.sec1__small ※本ポートフォリオの制作期間は約3週間&nbsp;レスポンシブ対応&nbsp;最大サイズ1920×1080px
+          a.sec6__link(href="https://first-view.kanji-n.work/" target="_blank") click
+        //- セクションpr自己PR
+      section.sec-pr#sec-pr
+        .sec-pr__v-box
+          h2: img.sec-pr__ttl(src="images/self-appeal.png" alt="self appeal")
+          video.sec-pr__video(muted src="images/video-01.mp4" playsinline autoplay loop)
+          .sec-pr__v-box-01
+          .sec-pr__v-box-02
+          .sec-pr__v-box-03
+          .sec-pr__v-box-04
+          .sec-pr__v-box-05
+          .sec-pr__v-box-06
+          .sec-pr__v-box-07
+          .sec-pr__v-box-08
+          .sec-pr__v-box-09
+          .sec-pr__v-box-10
+        p.sec-pr__txt 今回職業訓練校で6か月間WEBサイト制作を学びました。
+          span.sec-pr__space 多少の経験はありましたが、すぐに知らないことばかりになり、毎日が勉強の日々でした。
+          span.sec-pr__space このポートフォリオは訓練5か月目に制作したものですが、jsライブラリーのthree.jsを使用して3Dの表現などに挑戦しました。
+           br
+           | また本ポートフォリオからpugをとりいれました。
+          span.sec-pr__space WEBサイトのデザインはもちろんですが、コーディングや印刷物のデザイン業務も希望しています。
+          //- span.sec-pr__space もっと良い表現がしたいと思っていますので、コーディングはもちろんですがデザインにも興味があります。
+          //- span.sec-pr__space また過去WEBサイトを運営していたこともありますので、SEOにも関心があります。
+          span.sec-pr__space この度はご覧頂きありがとうございました。
+          span.sec-pr__space どうぞよろしくお願い致します。
+          span.sec-pr__space 中橋寛治
+    
+    //- フッター
+    footer.footer#footer
+      h2: img.footer__ttl(src="images/contact.png" alt="contact")
+      script(type="text/javascript").
+        var submitted=false;
+      iframe#hidden_iframe(name="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='form.html';}")
+      form#footer-form.footer-form(action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfSsPvVIUraPtJ0lVqoNM0ZrgYEpjaqt1HOACrD9OZ30NHuBA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;")
+        //- .footer-form__name
+        label.footer-form__name(for="name") name
+        input#name.footer-form__name-02(type="name" placeholder="中橋　寛治" name="entry.621469580" required)
+        //- .footer-from__mail
+        label.footer-form__mail(for="mail") e-mail
+        input#mail.footer-form__mail-02(type="email" placeholder="n.kanji2188@gmail.com" name="entry.106380581" required)
+        //- .footer-form__area
+        label.footer-form__area(for="contact") contact
+        textarea#contact.footer-form__area-02(name="entry.771106268" required)
+        //- .footer-form__submit
+        input#submit.footer-form__submit(type="submit" value="submit")
+      h3.footer__ttl-box
+        img.footer__ttl-02(src="images/kanji-nakahashi.png" alt="kanji nakahashi")
+        img.footer__ttl-03(src="images/portfolio.png" alt="portfolio")
+      small.footer__copy &copy;kanji nakahashi portfolio 2020
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js")
+  //- --
+  script(src="js/jquery-3.4.1.min.js")
+  //- slickスライダーの読み込み
+  script(type="text/javascript" src="js/slick.min.js")
   script(src="js/function.js")
 
-  
-//- npm init -y
-//- npm i -D gulp gulp-sass
-//- npm i -D gulp-pug
 //- npx pug index.pug --watch --pretty
+//- browser-sync start --server --files "*.html, *css/style.css, *.js"
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,166 @@
+
+//////////////////////////////////////
+// セクションのエレメントとモディファイアのミックスイン
+//////////////////////////////////////
+@mixin sec-ttl-pic {
+    width: 240px;
+    margin-left: -6px;
+    margin-bottom: 40px;
+    @media screen and (min-width:560px) {
+        width: 372px;
+        margin-left: -10px;
+    }
+    @media screen and (min-width:960px) {
+        position: absolute;
+        top: 100px;
+        left: 7%;
+        width: 30vw;
+    }
+    @media screen and (min-width:1440px) {
+        left: 16%;
+    }
+}
+
+//セクション作品の待機画像
+@mixin sec-pic {
+    background: url(../images/main-bg20.jpg) top center/contain;
+    width: 320px;
+    height: 196px;
+    margin: 0 auto;
+    position: relative;
+    animation: pic-rotateY 10s linear infinite;
+    @media screen and (min-width:960px) {
+        width: 40%;
+        padding-top: 24.72%;
+        margin-right: 5%;
+    }
+    @media screen and (min-width:1440px) {
+        width: 25%;
+        padding-top: 15.45%;
+        margin-right: 16%;
+    }
+}
+//セクションの作品画像メイン・モディファイア
+@mixin sec-pic-02 {
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.411);
+    width: 100%;
+    padding-top: 61.8%;
+    margin: 0 20% 0 auto;
+    // position: relative;
+    overflow: hidden;
+    transform: rotateY(-5deg) rotatez(-5deg);
+    animation: pic-rotateZ 20s infinite;
+    @media screen and (min-width:960px) {
+        width: 50%;
+        padding-top: 30.9%;
+        margin-right: 5%;
+    }
+    @media screen and (min-width:1440px) {
+        width: 35%;
+        padding-top: 21.63%;
+        margin-right: 16%;
+    }
+}
+//セクションの作品画像のグリッジ1・モディファイア
+@mixin pic-before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    z-index: 1;
+    // box-shadow: -2px 0 red;
+    filter: brightness(120%);
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim 8s infinite linear alternate-reverse;
+}
+//セクションの作品画像のグリッジ2・モディファイア
+@mixin pic-after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -0px;
+    // box-shadow: -2px 0 red;
+    overflow: hidden;
+    filter: invert(100%);
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 20s infinite linear alternate-reverse;
+
+}
+
+@mixin sec-ttl-02 {
+    font-size: 20px;
+        margin-top: 70px;
+        margin-bottom: 20px;
+        @media screen and (min-width:960px) {
+            position: absolute;
+            left: 7%;
+            width: 33%;
+            top: 130px;
+        }
+        @media screen and (min-width:1440px) {
+            left: 16%;
+            top: 170px;
+        }
+}
+@mixin sec-txt {
+    font-size: 14px;
+        line-height: 2;
+        margin-bottom: 20px;
+        transition: 2s;
+        @media screen and (min-width:960px) {
+            position: absolute;
+            left: 7%;
+            width: 33%;
+            top: 240px;
+        }
+        @media screen and (min-width:1440px) {
+            left: 16%;
+            top: 290px;
+            width: 30%;
+        }
+}
+@mixin sec-small {
+         display: block;
+        font-size: 12px;
+        padding-top: 20px;
+}
+@mixin sec-link {
+    display: block;
+        padding: 6px 0;
+        margin-top: 30px;
+        width: 100%;
+        border: 1px solid rgb(92, 92, 92);
+        text-decoration: none;
+        text-align: center;
+        position: relative;
+        @media screen and (min-width:960px) {
+            width: 200px;
+        }
+}
+@mixin sec-link-before {
+    content: "";
+        width: 40px;
+        height: 2px;
+        background: rgb(128, 128, 128);
+        display: block;
+        position: absolute;
+        top: 19px;
+    
+}
+@mixin sec-link-after {
+    content: "";
+    width: 15px;
+    height: 4px;
+    background: #000;
+    display: block;
+    position: absolute;
+    top: 18px;
+    left: 40px;
+}

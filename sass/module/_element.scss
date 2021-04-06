@@ -1,111 +1,700 @@
 // エレメント形式のクラスを記述
 
-// ブロック形式の中に入るクラス
-// .header__ttl{    
-// }
-// .gnav__item{   
-// }
+.header {
+    &__box {
+        height: 200vh;
+        position: relative;
+        pointer-events: none;
+        // background:url(../images/main-bg16.jpg) fixed;
+    }
 
-// まとめるのにブロック使用の例
-// .gnav{
-//     &__item{}
-//     &__list{}
-// }
+    &__mv {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        pointer-events: none;
+        background: url(../images/main-bg20.jpg);
+    }
 
-// 疑似クラス使用の例
-// .gnav{
-//     &__list{
-//             &:hover{
-//             }
-//         }
-// }
-p, h2, h3{
-    font-family: $font-noto;
-}
-a{
-    color: rgb(41, 41, 41);
-}
+    &__ttl {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 250px;
+        pointer-events: none;
+        // z-index: 99;
+    }
 
-.header{
-    &__box{
-    height: 100vh;
-    position: relative;
-    // display: flex;
-    // align-items: center;
-}
-    &__mv{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
- &__ttl{
-     font-size: 30px;
-     position: absolute;
-     top: 50%;
-     left: 0;
-     width: 100%;
-     text-align: center;
-     color: #fff;
-   text-shadow: 0 0 10px rgba(82, 218, 255, 0.673);
-   font-family: futura-pt-bold, sans-serif;
-   //  background: rgba(82, 218, 255, 0.673);
-}
-&__txt{
-    font-size: 16px;
-    position: absolute;
-    top: 56%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(82, 218, 255, 0.673);
-    font-family: futura-pt-bold, sans-serif;
- }
+    &__ttl-02 {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+    }
+
 }
 
-.sec{
-    &__line, &__ttl-02, &__txt{
-        margin-bottom: 20px;
-    }
-    &__ttl{
-        font-size: 30px;
-        text-shadow: 0 0 10px #999;
-   font-family: futura-pt-bold, sans-serif;
-   color: #fff;
-   margin-bottom: 5px;
+.gnav {
+    &__btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 99;
+        width: 30px;
+        height: 30px;
 
+        &-top,
+        &-mid,
+        &-btm {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: rgb(92, 92, 92);
+            transition: 1s;
+        }
+
+        &-mid {
+            top: 13px;
+        }
+
+        &-btm {
+            top: 26px;
+        }
     }
-    &__line{
-        height: 2px;
-        width: 80%;
-        box-shadow: 0 0 10px #999;
-        background: #fff;
-        margin-bottom: 50px;
+
+    &__nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 98;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 0;
+        // padding-top: calc(50vh - 224px);
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        opacity: 0;
+        pointer-events: none;
     }
-    &__pic{
-        width: 85%;
-        margin: 0 auto;
-        margin-bottom: 20px;
-        box-shadow: 10px 10px #999;
-       
-        // transform: scaleY(0.5);
-        // transform-origin: right center;
-        transform: translateZ( 70px) rotateZ( 3deg) rotateY( -15deg) perspective(500px);
-    }
-    &__ttl-02{
-        font-size: 20px;
-    }
-    &__txt{
-        font-size: 14px;
-        line-height: 2;
-    }
-    &__link{
+
+    &__link {
         display: block;
-        padding: 10px 0;
-        width: 200px;
-        border: 1px solid rgb(92, 92, 92);
+        width: 250px;
+        margin: 0 auto;
         text-decoration: none;
         text-align: center;
+        padding: 20px;
+        color: #fff;
+
+        // font-size: 20px;
+        @media screen and (min-width:960px) {
+            font-size: 20px;
+            padding: 20px;
+            width: 400px;
+        }
     }
 }
+
+.sec-new {
+    // &__ttl {
+    //     padding-top: 20px;
+    //     width: 240px;
+    //     margin: 0 auto;
+    //     @media screen and (min-width:560px) {
+    //         width: 372px;
+    //     }
+    //     @media screen and (min-width:960px) {
+    //         width: 30vw;
+    //         // padding: 80px 0 50px;
+    //         padding: 0px 0 50px;
+    //     }
+    // }
+    &__ttl{
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(7, 7, 7, 0.3);
+        margin-bottom: 50px;
+        transform: scaleX(1.2);
+        @media screen and (min-width:960px) {
+            font-size: 50px;
+            }
+    }
+    // &__ttl::after{
+    //     content: "";
+    //     display: block;
+    //     position: absolute;
+    //     top: 20px;
+    //     left: 0;   
+    //     border-bottom: 10px solid #333;
+    // }
+    &__box {
+        margin: 10px;
+        background: rgba(255, 255, 255, 0.324);
+        box-shadow: 0 0 10px rgba(7, 7, 7, 0.5);
+        @media screen and (min-width:560px) {
+        // margin: 20px
+        }
+    }
+
+    &__pic01,&__pic02, &__pic03   {
+        height: 230px;
+        background: url(../images/jetski.jpg) top center/ cover;
+    }
+    &__pic02 {
+        background: url(../images/pan.jpg) top center/ cover;
+    }
+    &__pic03 {
+        background: url(../images/lloyds.jpg) top center/ cover;
+    }
+
+    &__ttl-02 {
+        font-size: 20px;
+        margin: 20px 0;
+        text-align: center;
+    }
+   
+    &__txt {
+        font-size: 14px;
+        line-height: 2;
+        margin-bottom: 20px;
+        padding: 0 20px;
+        // 表示される行数の指定
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // display: -webkit-box;
+        // -webkit-line-clamp: 4;
+        // -webkit-box-orient: vertical;
+    }
+
+    &__small {
+        @include sec-small;
+
+    }
+
+    &__link {
+        @include sec-link;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+.sec1 {
+    &__ttl {
+        @include sec-ttl-pic;
+    }
+
+    &__pic {
+        @include sec-pic;
+    }
+
+    &__ttl-02 {
+        @include sec-ttl-02;
+    }
+
+    &__txt {
+        @include sec-txt;
+    }
+
+    &__space {
+        display: block;
+        margin-top: 20px;
+    }
+
+    &__small {
+        @include sec-small;
+    }
+
+    // CLIKリンク
+    &__link {
+        @include sec-link;
+    }
+
+    // リンクの装飾
+    &__link::before {
+        @include sec-link-before;
+    }
+
+    &__link::after {
+        @include sec-link-after;
+    }
+}
+
+.sec2 {
+    &__ttl {
+        @include sec-ttl-pic;
+
+    }
+
+    &__pic {
+        // background: url(../images/main-bg20.jpg) top center/contain;
+        @include sec-pic;
+    }
+
+    &__ttl-02 {
+        @include sec-ttl-02;
+    }
+
+    &__txt {
+        @include sec-txt;
+    }
+
+    &__space {
+        display: block;
+        margin-top: 20px;
+    }
+
+    &__small {
+        @include sec-small;
+    }
+
+    // CLIKリンク
+    &__link {
+        @include sec-link;
+    }
+
+    // リンクの装飾
+    &__link::before {
+        @include sec-link-before;
+    }
+
+    &__link::after {
+        @include sec-link-after;
+    }
+}
+
+.sec3 {
+    &__ttl {
+        @include sec-ttl-pic;
+    }
+
+    &__pic {
+        @include sec-pic;
+
+    }
+
+    &__ttl-02 {
+        @include sec-ttl-02;
+    }
+
+    &__txt {
+        @include sec-txt;
+    }
+
+    &__space {
+        display: block;
+        margin-top: 20px;
+    }
+
+    &__small {
+        @include sec-small;
+    }
+
+    // CLIKリンク
+    &__link {
+        @include sec-link;
+    }
+
+    // リンクの装飾
+    &__link::before {
+        @include sec-link-before;
+    }
+
+    &__link::after {
+        @include sec-link-after;
+    }
+}
+
+.sec4 {
+    &__ttl {
+        @include sec-ttl-pic;
+    }
+
+    &__pic {
+        @include sec-pic;
+    }
+
+    &__ttl-02 {
+        @include sec-ttl-02;
+    }
+
+    &__txt {
+        @include sec-txt;
+    }
+
+    &__space {
+        display: block;
+        margin-top: 20px;
+    }
+
+    &__small {
+        @include sec-small;
+    }
+
+    // CLIKリンク
+    &__link {
+        @include sec-link;
+    }
+
+    // リンクの装飾
+    &__link::before {
+        @include sec-link-before;
+    }
+
+    &__link::after {
+        @include sec-link-after;
+    }
+}
+
+.sec5 {
+    &__ttl {
+        @include sec-ttl-pic;
+    }
+
+    &__pic {
+        @include sec-pic;
+    }
+
+    &__ttl-02 {
+        @include sec-ttl-02;
+    }
+
+    &__txt {
+        @include sec-txt;
+    }
+
+    &__space {
+        display: block;
+        margin-top: 20px;
+    }
+
+    &__small {
+        @include sec-small;
+    }
+
+    // CLIKリンク
+    &__link {
+        @include sec-link;
+    }
+
+    // リンクの装飾
+    &__link::before {
+        @include sec-link-before;
+    }
+
+    &__link::after {
+        @include sec-link-after;
+    }
+}
+
+.sec6 {
+    &__ttl {
+        @include sec-ttl-pic;
+    }
+
+    &__pic {
+        @include sec-pic;
+    }
+
+    &__ttl-02 {
+        @include sec-ttl-02;
+    }
+
+    &__txt {
+        @include sec-txt;
+    }
+
+    &__space {
+        display: block;
+        margin-top: 20px;
+    }
+
+    &__small {
+        @include sec-small;
+    }
+
+    // CLIKリンク
+    &__link {
+        @include sec-link;
+    }
+
+    // リンクの装飾
+    &__link::before {
+        @include sec-link-before;
+    }
+
+    &__link::after {
+        @include sec-link-after;
+    }
+}
+
+.sec-pr {
+    &__ttl {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 240px;
+        z-index: 2;
+
+        @media screen and (min-width:560px) {
+            width: 372px;
+        }
+
+        @media screen and (min-width:960px) {
+            top: 10%;
+            transform: translate(-50%, 0);
+            width: 30vw;
+        }
+
+        @media screen and (min-width:1420px) {
+            top: 20%;
+        }
+    }
+
+    &__v-box {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__video {
+        width: 100vw;
+        animation: video-invert 20s infinite;
+    }
+
+    &__v-box-01,
+    &__v-box-02,
+    &__v-box-03,
+    &__v-box-04,
+    &__v-box-05,
+    &__v-box-06,
+    &__v-box-07,
+    &__v-box-08,
+    &__v-box-09,
+    &__v-box-10 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 13%;
+        height: calc(100% - 2px);
+        background: rgba(0, 0, 0, 0.8);
+        animation: video-01 20s infinite;
+
+        @media screen and (min-width:560px) {
+            height: calc(100% - 3px);
+
+        }
+    }
+
+    &__v-box-02 {
+        left: 13%;
+        width: 2%;
+        animation: video-02 20s infinite;
+    }
+
+    &__v-box-03 {
+        left: 15%;
+        width: 10%;
+    }
+
+    &__v-box-04 {
+        left: 25%;
+        width: 5%;
+        animation: video-03 20s infinite;
+    }
+
+    &__v-box-05 {
+        left: 30%;
+        width: 20%;
+        animation: video-02 20s infinite;
+    }
+
+    &__v-box-06 {
+        left: 50%;
+        width: 2%;
+    }
+
+    &__v-box-07 {
+        left: 52%;
+        width: 3%;
+    }
+
+    &__v-box-08 {
+        left: 55%;
+        width: 13%;
+        animation: video-03 20s infinite;
+    }
+
+    &__v-box-09 {
+        left: 68%;
+        width: 7%;
+    }
+
+    &__v-box-10 {
+        left: 75%;
+        width: 25%;
+        animation: video-03 20s infinite;
+    }
+
+    &__txt {
+        font-size: 14px;
+        line-height: 2;
+        margin-bottom: 20px;
+        padding: 20px 20px 20px;
+
+        @media screen and (min-width:960px) {
+            position: absolute;
+            top: calc(60% - 216px);
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            z-index: 2;
+        }
+    }
+
+    &__space {
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+.footer {
+    &__ttl {
+        padding-top: 20px;
+        width: 240px;
+        margin: 0 auto;
+
+        @media screen and (min-width:560px) {
+            width: 372px;
+        }
+
+        @media screen and (min-width:960px) {
+            width: 30vw;
+            padding: 80px 0 50px;
+        }
+    }
+
+    &__ttl-box {
+        height: 100vh;
+        // display: flex;
+        position: relative;
+    }
+
+    &__ttl-02 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        width: 250px;
+        // margin: 0 auto;
+        filter: grayscale(100%);
+    }
+
+    &__ttl-03 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        width: 100px;
+        // margin: 0 auto;
+        // padding-bottom: 20px;
+        filter: grayscale(100%);
+    }
+
+    &__copy {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        color: rgb(255, 255, 255);
+        // text-align: center;
+        // display: block;
+        // padding: 100px 0 20px;
+    }
+}
+
+.footer-form {
+
+    &__name,
+    &__mail,
+    &__area {
+        display: block;
+        width: 100%;
+        margin: 20px 0;
+        color: #fff;
+    }
+
+    &__name-02,
+    &__mail-02,
+    &__area-02 {
+        display: block;
+        width: 100%;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    &__submit {
+        margin-top: 50px;
+        width: 130px;
+        padding: 20px 0;
+        background: rgba(0, 0, 0, 0.9);
+        color: #fff;
+    }
+}
+
+// .sec6 {
+
+//     &__ttl {
+//         @include sec-ttl-pic;
+
+//         @media screen and (min-width:960px) {
+//             top: 150px;
+//         }
+
+//     }
+//     &__pic {
+//         @include sec-pic;
+//     }
+
+//     &__txt {
+//         @include sec-txt;
+//         padding-top: 70px;
+
+//         @media screen and (min-width:960px) {
+//             padding-top: 0;
+//         }
+//     }
+
+//     &__space {
+//         display: block;
+//         margin-top: 20px;
+//     }
+//     &__small{
+//         @include sec-small;
+//     }
+//     // CLIKリンク
+//     &__link {
+//         @include sec-link;
+//     }
+
+//     // リンクの装飾
+//     &__link::before {
+//         @include sec-link-before;
+//     }
+
+//     &__link::after {
+//         @include sec-link-after;
+//     }
+// }

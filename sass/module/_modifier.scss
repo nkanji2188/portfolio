@@ -3,3 +3,107 @@
 // ブロックやエレメントの後に記述
 // .header--about{}
 // .header__ttl--about{}
+
+.gnav__nav--02{
+    opacity: 1;
+    pointer-events: visible;
+}
+
+.gnav__btn{
+    &-top--02{
+        background: #fff;
+        transform:  translateY(13px)rotateZ(405deg);
+    }
+    &-mid--02{
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    &-btm--02{
+        background: #fff;
+        transform:  translateY(-13px) rotateZ(-405deg);
+    }
+}
+
+.sec1__pic--02{
+    @include sec-pic-02;
+    background: url(../images/kn-web.jpg) top center/contain;
+    &::before {
+        background: url(../images/kn-web.jpg) top center/contain;
+        @include pic-before;
+    }
+    &::after {
+        background: url(../images/kn-web.jpg) top center/contain;
+        @include pic-after;
+    }
+}
+// .sec__txt--02{
+//     opacity: 1;
+//     filter: blur(0);
+// }
+.sec2__pic--02{
+    @include sec-pic-02;
+    background: url(../images/next-one.jpg) top center/contain;
+    &::before {
+        background: url(../images/next-one.jpg) top center/contain;
+        @include pic-before;
+    }
+
+    &::after {
+        background: url(../images/next-one.jpg) top center/contain;
+        @include pic-after;
+
+    }
+}
+.sec3__pic--02{
+    @include sec-pic-02;
+    background: url(../images/wss.jpg) top center/contain;
+    &:before {
+        background: url(../images/wss.jpg) top center/contain;
+        @include pic-before;
+    }
+
+    &::after {
+        background: url(../images/wss.jpg) top center/contain;
+        @include pic-after;
+    }
+}
+.sec4__pic--02{
+    @include sec-pic-02;
+    background: url(../images/sapporo.jpg) top center/contain;
+    &:before {
+        background: url(../images/sapporo.jpg) top center/contain;
+        @include pic-before;
+    }
+    &::after {
+        background: url(../images/sapporo.jpg) top center/contain;
+        @include pic-after;
+    }
+}
+.sec5__pic--02{
+    @include sec-pic-02;
+    background: url(../images/lloyds.jpg) top center/contain;
+    &:before {
+        background: url(../images/lloyds.jpg) top center/contain;
+        @include pic-before;
+    }
+    &::after {
+        background: url(../images/lloyds.jpg) top center/contain;
+        @include pic-after;
+    }
+}
+.sec6__pic--02{
+    @include sec-pic-02;
+    background: url(../images/kn02.jpg) top center/contain;
+    &:before {
+        background: url(../images/kn02.jpg) top center/contain;
+        @include pic-before;
+    }
+    &::after {
+        background: url(../images/kn02.jpg) top center/contain;
+        @include pic-after;
+    }
+}
+
+// .sec1__pic::after--02{
+//     display: block;
+// }

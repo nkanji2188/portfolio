@@ -1,23 +1,123 @@
 // ブロック形式のクラスを記述
 
+
+///////////////////////////////////////
+//全体のフォント・a要素は_font.scssで指定
+///////////////////////////////////////
+
 // body{
-//     overflow: hidden;
-//     margin: 0;
+//     // overflow: hidden;
+//     // margin: 0;
 // }
-
-
+.header{
+    pointer-events: none;
+}
 .main{
+    padding-top: 100px;
+    overflow: hidden;
     width: 100%;
-    background: rgba(0, 0, 0, 0.782);
-    height: 3000px;
- 
+    background: #000;
+    background:url(../images/main-bg16.jpg) fixed;
 }
-.sec{
+// 新たに追加したスライターのセクション
+.sec-new{
+    padding: 70px 0px 100px;
+    max-width: 100%;
+    margin: 0 auto;
+    // background: rgba(99, 99, 99, 0.466);
+    // @media (min-width: 576px) {
+    //     max-width: 540px;
+    // }
+    // @media (min-width: 768px) {
+    //     max-width: 720px;
+    // }
+    @media (min-width: 992px) {
+        // padding: 70px 15px;
+        max-width: 960px;
+    }
+    @media (min-width: 1200px) {
+        max-width: 1140px;
+    }
+    @media (min-width: 1440px) {
+        max-width: 1320px;
+    }
+   
+}
+// sec-newのスライダーの中央拡大
+.slick{
+    &-slide {
+    transform: scale(.9);
+    transition: 1s;
+    // filter: brightness(90%);
+  }
+    &-current {
+        transform: scale(1);
+        // filter: brightness(100%);
+  }
+}
+/* スライダーのドットサイズ */
+  .slick-dots li button:before {
+    font-size: 16px;
+    text-shadow: 0px 0px 10px #fff;
+  }
+.sec1, .sec2, .sec3, .sec4, .sec5, .sec6 {
     padding: 20px;
-    background: rgb(243, 243, 243);
     margin-bottom: 50px;
-    transform-style: preserve-3d;
+   
+    ////////////////////
+    // 子要素の遠近表現
+    ///////////////////
     perspective: 500px;
+    position: relative;
+    @media screen and (min-width:560px){
+       padding: 50px;
+    }
+    @media screen and (min-width:960px){
+        padding: 150px 0 190px;
+        perspective: 1000px;
+    }
 }
+//////////////////////
+//作品と自己PRとの隙間
+/////////////////////
+.sec6{
+     @media screen and (min-width:960px){
+        padding-bottom: 400px;
+        }
+    }
+
+// 自己アピール
+.sec-pr{
+    background:url(../images/main-bg16.jpg);
+    position: relative;
+    @media screen and (min-width:960px){
+        margin-bottom: 200px;
+    }
+  
+}
+.footer{
+    background: rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+.footer-form {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    @media screen and (min-width:960px){
+        width: 50%;
+       
+    }
+}
+// .sec6 {
+//     background: url(../images/main-bg16.jpg);
+//     padding-bottom: 100px;
+//     padding-top: 100px;
+//     margin-bottom: 0;
+//     @media screen and (min-width:960px){
+//         padding-bottom: 300px;
+//         padding-top: 200px;
+       
+//     }
+// }
 
 

@@ -1,139 +1,155 @@
-window.addEventListener('load', init);
-function init() {
-    let rot = 0;
-  // レンダラー
-  const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('#header__mv'),
-    antialias: true
-  });
-  // シーン
-  const scene = new THREE.Scene();
-  // カメラ
-  const camera = new THREE.PerspectiveCamera(45, 1.0);
-  camera.position.set(0, 0, +1000);
-    // ライト
-  const light = new THREE.DirectionalLight(0xffffff, 0.7);
-    light.position.set(1, 1, 1);
-  // const light2 = new THREE.DirectionalLight(0xffffff, 0.7);
-  //   light.position.set(1, 1, -120);
-  const light2 = new THREE.HemisphereLight(0x888888, 0x0000FF, 0.5);
-    light.position.set(1, 1, 1);
 
+// //////////////////////////  
+// ファーストビューは最後に記述
+// //////////////////////////
+
+$(function(){
+
+  $('#gnav__nav').css('transition', '1s');
+  $('#gnav__btn').on('click', function(){
     
-    // ここからパーティクル
-    StarField();
-    function StarField(){
-    const geometry = new THREE.Geometry();
-
-        const SIZE = 1000;
-        const LENGTH = 5000;
-        // const LENGTH = 1000;
-        for (let i = 0; i < LENGTH; i++){
-            geometry.vertices.push(
-            new THREE.Vector3(
-                SIZE * (Math.random() - 1),
-                SIZE * (Math.random() - 0.5),
-                SIZE * (Math.random() - 0.5)
-            )
-        );
-        }
-    const material = new THREE.PointsMaterial({
-        size: 5,
-        color: 0x40e0d0
+      // $('#gnav__nav').toggleClass('gnav__nav--02');
+      $('#gnav__nav').toggleClass('gnav__nav--02');
+      $('#gnav__btn-top').toggleClass('gnav__btn-top--02');
+      $('#gnav__btn-mid').toggleClass('gnav__btn-mid--02');
+      $('#gnav__btn-btm').toggleClass('gnav__btn-btm--02');
     });
-    const ster = new THREE.Points(geometry, material);
-    // scene.add(ster);
-    }
-    // ここまでパーティクル
-
-
-    // ここからイニシャル
-    const geometry = new THREE.BoxGeometry(100, 100, 100);
-     // const geometry2 = new THREE.BoxGeometry(100, 100, 100);
-    const loader = new THREE.TextureLoader();
-    const texture = loader.load('../images/k4.png');
-    // マテリアルにテクスチャー
-    const material = new THREE.MeshStandardMaterial({
-    map: texture
-    });
-     // const material = new THREE.MeshToonMaterial({color: 0x999999});
-
-    // ここからイニシャルK
-    const box1 = new THREE.Mesh(geometry, material);
-    const box2 = new THREE.Mesh(geometry, material);
-    const box3 = new THREE.Mesh(geometry, material);
-    const box4 = new THREE.Mesh(geometry, material);
-    const box5 = new THREE.Mesh(geometry, material);
-    const box6 = new THREE.Mesh(geometry, material);
-    const box7 = new THREE.Mesh(geometry, material);
-    const box8 = new THREE.Mesh(geometry, material);
-    const box9 = new THREE.Mesh(geometry, material);
-    const box10 = new THREE.Mesh(geometry, material);
-  box1.position.y= 220;
-  box2.position.y = 110;
-  box4.position.y = -110;
-  box5.position.y = -220;
-  box6.position.y = 220;
-  box6.position.x = 330;
-  box7.position.y = 110;
-  box7.position.x = 220;
-  box8.position.x = 110;
-  box9.position.y = -110;
-  box9.position.x = 220;
-  box10.position.x = 330;
-  box10.position.y = -220;
- 
-  // scene.add(box1, box2, box3, box4, box5);
-  // scene.add(box6);
-  // scene.add(box7);
-  // scene.add(box8);
-  // scene.add(box9);
-  // scene.add(box10);
-  scene.add(light, light2);
-  // scene.add(light3);
-
-  tick();
-  // ループイベント
-  
-  function tick() {
-           rot += 1;
-
-        const radian = (rot * Math.PI) / 1200;
- 
-        camera.position.x = 1500 * Math.sin(radian);
-        camera.position.z = 1000 * Math.cos(radian);
-        camera.position.y = 1000 * Math.cos(radian);
-        camera.lookAt(new THREE.Vector3(0, 0, 0));
-
-        // box1.moveX = 2;
-        // if( Math.abs( box1.position.x ) > 150 ) box1.moveX *= -1;
-        // box1.position.x += box1.moveX;
-        // if( Math.abs(box1.position.x) > 100 ) box1.moveX *= -1;
-        // box1.rotation.y += 0.005;
-        // box1.position.x += 0.5;
+    $('#gnav__nav').on('click', function(){
       
-        renderer.render(scene, camera);
-        renderer.setClearColor(0xffffff, 1);
-        requestAnimationFrame(tick);
-  }
-  // 初期化
-  onResize();
-  // リサイズイベント発生時に実行
-  window.addEventListener('resize', onResize);
-  function onResize() {
-    // サイズを取得
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    // const height = 1080;
-    // レンダラーのサイズ
-    renderer.setPixelRatio(window.devicePixelRatio);
-    // renderer.setSize(width, height);
-    renderer.setSize(width, height);
-    // カメラのアスペクト比
-    camera.aspect = width / height;
-    // camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-  }
-}
+      $('#gnav__nav').toggleClass('gnav__nav--02');
+      $('#gnav__btn-top').toggleClass('gnav__btn-top--02');
+      $('#gnav__btn-mid').toggleClass('gnav__btn-mid--02');
+      $('#gnav__btn-btm').toggleClass('gnav__btn-btm--02');
+    });
+    
+// //////////////////////////  
+// スライダーの設定
+// //////////////////////////
+
+// #sec-new__slickは親のクラス・クラス名は任意
+$('#sec-new__slick').slick({
+  autoplay: true,
+  // 切り替わりの時間
+  autoplaySpeed: 3000,
+  // 切り替わりのスピード
+  speed: 1000,
+  // 繰り返しループ
+  infinite: true,
+  arrows: false,
+  // 表示する数
+  slidesToShow: 3,
+  // 一度にスクロールする数
+  slidesToScroll: 3,
+  dots: true,
+  centerMode: true,
+  centerPadding: '0px',
+  responsive: [
+    {
+      breakpoint: 960,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '100px',
+      }
+    },
+    {
+      breakpoint: 560,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        // センターモード時、見切れたコンテンツの幅をpx指定
+        // 設定しない場合はデフォルトで50px
+        centerMode: true,
+        centerPadding: '50px',
+      }
+    }
+
+  ]
+});
+
+  /////////////////////////////////////
+  // セクションメイン画像のアニメーション
+  /////////////////////////////////////
+
+  // var top = $('.main').offset().top;
+
+  $(window).scroll(function(){
+
+    var target = $('#sec1').offset().top;
+      target -= 250;
+    var target02 = $('#sec1').offset().top;
+      target02 += 250;
+    if( $(window).scrollTop() > target && $(window).scrollTop() < target02){
+      $('#sec1__pic').addClass('sec1__pic--02') ;
+      // $('.sec1__txt').addClass('sec__txt--02') ;
+    }else{
+      $('#sec1__pic').removeClass('sec1__pic--02');
+      // $('.sec1__txt').removeClass('sec__txt--02') ;
+     }
+  
+
+    var target = $('#sec2').offset().top;
+      target -= 250;
+    var target02 = $('#sec2').offset().top;
+      target02 += 250;
+      if( $(window).scrollTop() > target && $(window).scrollTop() < target02){
+        $('#sec2__pic').addClass('sec2__pic--02') ;
+        // $('.sec2__txt').addClass('sec__txt--02') ;
+      }else{
+        $('#sec2__pic').removeClass('sec2__pic--02');
+      }
+
+    var target = $('#sec3').offset().top;
+        target -= 250;
+    var target02 = $('#sec3').offset().top;
+        target02 += 250;
+      if( $(window).scrollTop() > target && $(window).scrollTop() < target02){
+        $('#sec3__pic').addClass('sec3__pic--02') ;
+        // $('.sec3__txt').addClass('sec__txt--02') ;
+      }else{
+        $('#sec3__pic').removeClass('sec3__pic--02');
+      }
+
+      var target = $('#sec4').offset().top;
+      target -= 250;
+    var target02 = $('#sec4').offset().top;
+      target02 += 250;
+     if( $(window).scrollTop() > target && $(window).scrollTop() < target02){
+        $('#sec4__pic').addClass('sec4__pic--02') ;
+        // $('.sec4__txt').addClass('sec__txt--02') ;
+      }else{
+        $('#sec4__pic').removeClass('sec4__pic--02');
+       }
+
+    var target = $('#sec5').offset().top;
+      target -= 250;
+    var target02 = $('#sec5').offset().top;
+      target02 += 250;
+     if( $(window).scrollTop() > target && $(window).scrollTop() < target02){
+        $('#sec5__pic').addClass('sec5__pic--02') ;
+        // $('.sec5__txt').addClass('sec__txt--02') ;
+      }else{
+        $('#sec5__pic').removeClass('sec5__pic--02');
+       }
+
+    var target = $('#sec6').offset().top;
+      target -= 250;
+    var target02 = $('#sec6').offset().top;
+      target02 += 250;
+     if( $(window).scrollTop() > target && $(window).scrollTop() < target02){
+        $('#sec6__pic').addClass('sec6__pic--02') ;
+        // $('.sec6__txt').addClass('sec__txt--02') ;
+      }else{
+        $('#sec6__pic').removeClass('sec6__pic--02');
+       }
+
+  });
+
+});
 
 
+
+
+
+     
